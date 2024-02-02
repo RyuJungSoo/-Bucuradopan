@@ -6,7 +6,7 @@ public class MouseController : MonoBehaviour
 {
     public bool GamePause = false; // 게임 중지 판단 여부
     public float attackRange = 1f; // 공격 범위
-
+    private bool isAttack = false; // 공격 중 여부
 
     private Collider2D[] collider2Ds; // 몬스터 관리용 배열
 
@@ -27,21 +27,41 @@ public class MouseController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                collider2Ds = Physics2D.OverlapCircleAll(transform.position, attackRange);
-                foreach (Collider2D collider in collider2Ds)
+                if (GameManager.instance.StaminaUse())
                 {
-                    if (collider.tag == "Monster")
+                    isAttack = true;
+                    UiManager.instance.StaminaBarUpdate();
+                    collider2Ds = Physics2D.OverlapCircleAll(transform.position, attackRange);
+                    foreach (Collider2D collider in collider2Ds)
                     {
+                        if (collider.tag == "Monster")
+                        {
 
-                        collider.gameObject.GetComponent<MonsterComponent>().TakeDamage(GameManager.instance.atk);
+                            collider.gameObject.GetComponent<MonsterComponent>().TakeDamage(GameManager.instance.atk);
+                        }
                     }
                 }
+            }
+            else
+            {
+                if (isAttack == true)
+                {
+                    Invoke("StaminaRecoverStart", GameManager.instance.stamina_cool);
 
+                }
+                else
+                {
+                    GameManager.instance.StaminaRecover();
+                    UiManager.instance.StaminaBarUpdate();
+                }
             }
         }
     }
 
-
+    private void StaminaRecoverStart()
+    {
+        isAttack = false;
+    }
 
     private void OnDrawGizmos() // 공격 범위 시각화
     {

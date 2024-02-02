@@ -26,7 +26,7 @@ public class SpawnComponent : MonoBehaviour
     {
         if (curTime <= 0)
         {
-            Spawn(Random.Range(0, SpawnLevel + 1));
+            Spawn(SpawnLevel);
             curTime = SpawnCoolTime;
         }
         else
@@ -41,5 +41,10 @@ public class SpawnComponent : MonoBehaviour
             GameObject enemy = pool.GetComponent<PoolManager>().monsterGet(SpawnIndex);
             enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position; // 자식 오브젝트만 선택되도록 랜덤 시작은 1부터
         }
+    }
+
+    public void LevelUp()
+    {
+        SpawnLevel++;
     }
 }

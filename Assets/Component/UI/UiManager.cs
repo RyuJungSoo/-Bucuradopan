@@ -11,6 +11,8 @@ public class UiManager : MonoBehaviour
     public GameObject allClearPanel;
     public GameObject waveClearPanel;
     public Image Hp_Bar;
+    public Image Stamina_Bar;
+    public Image Progress_Bar;
 
     public static UiManager instance = null;
 
@@ -34,6 +36,18 @@ public class UiManager : MonoBehaviour
     public void HpBarUpdate()
     {
         Hp_Bar.fillAmount = GameManager.instance.magicCircle.Hp / GameManager.instance.magicCircle.maxHp;
+
+    }
+
+    public void StaminaBarUpdate()
+    {
+        Stamina_Bar.fillAmount = GameManager.instance.Stamina / GameManager.instance.maxStamina;
+
+    }
+
+    public void ProgressBarUpdate()
+    {
+        Progress_Bar.fillAmount = GameManager.instance.Progress / GameManager.instance.max_Progress;
 
     }
 }

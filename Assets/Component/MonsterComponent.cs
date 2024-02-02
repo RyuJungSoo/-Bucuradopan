@@ -15,10 +15,12 @@ public class MonsterComponent : MonoBehaviour
     public bool isFreeze = false;
     public bool isAttack = false;
     public bool isAttacked = false;
+    public bool isSingleton = false;
 
     // 게암오브젝트 및 컴포넌트
     private GameObject magicCircle;
     private Rigidbody2D monsterRig;
+    private Animator animator;
 
 
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class MonsterComponent : MonoBehaviour
     {
         monsterRig = GetComponent<Rigidbody2D>();
         magicCircle = GameObject.Find("magicCircle");
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,13 +37,15 @@ public class MonsterComponent : MonoBehaviour
         // magicCircle이 비활성화되어있거나 할당받지 못했을 경우
         if (magicCircle == null || magicCircle.active == false)
             return;
-   
 
+        float distance = Vector2.Distance(transform.position, magicCircle.transform.position);
         if (isDead == false && isFreeze == false)
         {
-            Move();
+            Move(distance);
         }
-    
+        else
+            animator.SetBool("isWalk", false);
+
     }
 
     private void Object_OFF()
@@ -59,9 +64,11 @@ public class MonsterComponent : MonoBehaviour
         isFreeze = false;
     }
 
-    private void Move()
+    private void Move(float distance)
     {
-        
+
+        if(distance > 0)
+            animator.SetBool("isWalk", true);
 
         // 스프라이트 정면 바꾸기
         float Abs_x = Mathf.Abs(transform.localScale.x);
@@ -80,7 +87,7 @@ public class MonsterComponent : MonoBehaviour
         Vector2 dirVec = magicCircle.GetComponent<Rigidbody2D>().position - monsterRig.position; // Rigidbody2D 중심 기준으로 방향 계산
         Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;
         monsterRig.MovePosition(monsterRig.position + nextVec);
-
+        
     }
 
     public void TakeDamage(float damage)
@@ -92,7 +99,8 @@ public class MonsterComponent : MonoBehaviour
             monsterRig.velocity = new Vector3(0, 0); // 관성 지우기
             isDead = true;
             GetComponent<Collider2D>().enabled = false;
-            Object_OFF();
+            Invoke("Object_OFF", 0.1f);
+                
 
         }
         isAttacked = false;
