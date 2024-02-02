@@ -17,7 +17,7 @@ public class MonsterComponent : MonoBehaviour
     public bool isAttacked = false;
 
     // 게암오브젝트 및 컴포넌트
-    public GameObject magicCircle;
+    private GameObject magicCircle;
     private Rigidbody2D monsterRig;
 
 
@@ -25,12 +25,14 @@ public class MonsterComponent : MonoBehaviour
     void Awake()
     {
         monsterRig = GetComponent<Rigidbody2D>();
+        magicCircle = GameObject.Find("magicCircle");
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (magicCircle.active == false)
+        // magicCircle이 비활성화되어있거나 할당받지 못했을 경우
+        if (magicCircle == null || magicCircle.active == false)
             return;
    
 
@@ -59,19 +61,26 @@ public class MonsterComponent : MonoBehaviour
 
     private void Move()
     {
+        
+
         // 스프라이트 정면 바꾸기
         float Abs_x = Mathf.Abs(transform.localScale.x);
         float Abs_y = Mathf.Abs(transform.localScale.y);
 
-        if (transform.position.x <= magicCircle.transform.position.x)
-            transform.localScale = new Vector2(1 * Abs_x, 1 * Abs_y);
-        else
-            transform.localScale = new Vector2(-1 * Abs_x, 1 * Abs_y);
+        if (Mathf.Abs(transform.position.x - magicCircle.transform.position.x) >= 0.05) // 몬스터와 magicCircle의 거리 차가 클 때만 바꾸기
+        {
+            
+            if (transform.position.x < magicCircle.transform.position.x)
+                transform.localScale = new Vector2(1 * Abs_x, 1 * Abs_y);
+            else if (transform.position.x > magicCircle.transform.position.x)
+                transform.localScale = new Vector2(-1 * Abs_x, 1 * Abs_y);
+        }
 
         // 이동
         Vector2 dirVec = magicCircle.GetComponent<Rigidbody2D>().position - monsterRig.position; // Rigidbody2D 중심 기준으로 방향 계산
         Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;
         monsterRig.MovePosition(monsterRig.position + nextVec);
+
     }
 
     public void TakeDamage(float damage)
@@ -95,6 +104,7 @@ public class MonsterComponent : MonoBehaviour
         if (collision.gameObject.CompareTag("magicCircle") && isFreeze == false)
         {
             collision.gameObject.GetComponent<magicCircleComponent>().TakeDamage(Time.deltaTime * Damage);
+            UiManager.instance.HpBarUpdate();
         }
     }
 }

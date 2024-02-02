@@ -6,7 +6,7 @@ public class MouseController : MonoBehaviour
 {
     public bool GamePause = false; // 게임 중지 판단 여부
     public float attackRange = 1f; // 공격 범위
-    public float Damage = 5;
+
 
     private Collider2D[] collider2Ds; // 몬스터 관리용 배열
 
@@ -33,7 +33,7 @@ public class MouseController : MonoBehaviour
                     if (collider.tag == "Monster")
                     {
 
-                        collider.gameObject.GetComponent<MonsterComponent>().TakeDamage(Damage);
+                        collider.gameObject.GetComponent<MonsterComponent>().TakeDamage(GameManager.instance.atk);
                     }
                 }
 
