@@ -6,7 +6,7 @@ public class MouseController : MonoBehaviour
 {
     public bool GamePause = false; // 게임 중지 판단 여부
     public float attackRange = 1f; // 공격 범위
- 
+    public float Damage = 5;
 
     private Collider2D[] collider2Ds; // 몬스터 관리용 배열
 
@@ -22,7 +22,7 @@ public class MouseController : MonoBehaviour
         if (!GamePause)
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
+            mousePos.z = -1;
             transform.position = Vector3.Lerp(transform.position, mousePos, 0.3f);
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -33,7 +33,7 @@ public class MouseController : MonoBehaviour
                     if (collider.tag == "Monster")
                     {
 
-                        Debug.Log(collider.gameObject.name);
+                        collider.gameObject.GetComponent<MonsterComponent>().TakeDamage(Damage);
                     }
                 }
 
