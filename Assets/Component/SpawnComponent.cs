@@ -12,6 +12,7 @@ public class SpawnComponent : MonoBehaviour
 
     // 게암오브젝트 및 컴포넌트
     public Transform[] spawnPoint;
+    public GameObject[] Boss;
     private GameObject pool;
 
     // Start is called before the first frame update
@@ -41,6 +42,20 @@ public class SpawnComponent : MonoBehaviour
             GameObject enemy = pool.GetComponent<PoolManager>().monsterGet(SpawnIndex);
             enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position; // 자식 오브젝트만 선택되도록 랜덤 시작은 1부터
         }
+    }
+
+    public void BossSpawn()
+    {
+        
+
+        if (!GameManager.instance.isGameOver)
+        {
+            GameObject enemy = Boss[SpawnLevel];
+            enemy.SetActive(true);
+            enemy.transform.position = spawnPoint[Random.Range(1, spawnPoint.Length)].position; // 자식 오브젝트만 선택되도록 랜덤 시작은 1부터
+            
+        }
+
     }
 
     public void LevelUp()

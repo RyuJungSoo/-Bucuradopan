@@ -109,7 +109,14 @@ public class MonsterComponent : MonoBehaviour
             monsterRig.velocity = new Vector3(0, 0); // 관성 지우기
             isDead = true;
             GetComponent<Collider2D>().enabled = false;
-            Invoke("Object_OFF", 0.1f);
+
+            if (isSingleton)
+            {
+                GameManager.instance.SpawnLevelUp();
+                GameManager.instance.isBoss = false;
+            }
+
+            Invoke("Object_OFF", 0.3f);
                 
 
         }

@@ -96,5 +96,6 @@ public class HpBarScript : MonoBehaviour
         m_hpBarList[index][monsterindex].SetActive(true);
     }
 
+
 }
 

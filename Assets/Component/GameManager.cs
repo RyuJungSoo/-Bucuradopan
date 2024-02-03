@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int gold = 10;
     public float atk = 1f;
     public bool isGameOver = false;
+    public bool isBoss = false;
 
 
     // 스태미나 관련 변수들
@@ -50,8 +51,19 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameOver)
         {
-            Progress += (Progress_speed * Time.unscaledDeltaTime);
-            UiManager.instance.ProgressBarUpdate();
+            if (isBoss)
+                return;
+            else
+            {
+                Progress += (Progress_speed * Time.unscaledDeltaTime);
+                UiManager.instance.ProgressBarUpdate();
+
+                if (Progress >= max_Progress)
+                {
+                    isBoss = true;
+                    Spawner.GetComponent<SpawnComponent>().BossSpawn();
+                }
+            }
         }
     }
 
@@ -105,6 +117,7 @@ public class GameManager : MonoBehaviour
     {
         Spawner.GetComponent<SpawnComponent>().LevelUp();
         Progress = 0f;
+        max_Progress += 5f;
         UiManager.instance.ProgressBarUpdate();
     }
 }
