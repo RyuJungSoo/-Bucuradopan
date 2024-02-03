@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndingEvent : MonoBehaviour
 {
@@ -46,5 +47,10 @@ public class EndingEvent : MonoBehaviour
         endingPanel.SetActive(true);
 
         yield return null;
+    }
+
+    public void ChangeToMainMenuScene()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
