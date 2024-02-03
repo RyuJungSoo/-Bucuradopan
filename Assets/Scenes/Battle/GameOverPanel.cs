@@ -1,32 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameOverPanel : MonoBehaviour
 {
-
     public GameObject retryPanel;
-    
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        retryPanel.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ShowRetryPanel()
     {
-        
+        yield return new WaitForSeconds(5f);
+
+        retryPanel.SetActive(true);
+
+        yield return null;
     }
 
     private void OnEnable()
     {
-        retryPanel.SetActive(true);
+        StartCoroutine(ShowRetryPanel());
     }
 
     private void OnDisable()
     {
+        StopAllCoroutines();
         retryPanel.SetActive(false);
+    }
+
+    public void Retry()
+    {
+        GameManager.instance.Retry();
+    }
+
+    public void GiveUp()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

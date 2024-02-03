@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class GameManager : MonoBehaviour
     public float atk = 1f;
     public bool isGameOver = false;
     public bool isBoss = false;
-
 
     //히든 변수
     public float stella = 0f;
@@ -75,6 +75,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Retry()
+    {
+        SceneManager.LoadScene("Battle");
+    }
     public bool isAllCleared()
     {
 
