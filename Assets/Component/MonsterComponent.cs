@@ -9,6 +9,7 @@ public class MonsterComponent : MonoBehaviour
     public float Hp = 20;
     public float maxHp = 20;
     public float Damage = 2;
+    private float Prev_Speed;
 
     // 변수
     public bool isDead = false;
@@ -16,19 +17,25 @@ public class MonsterComponent : MonoBehaviour
     public bool isAttack = false;
     public bool isAttacked = false;
     public bool isSingleton = false;
+    public bool isSlow = false; // Slow 디버프 유무
+    private float tmp_mass;
 
     // 게암오브젝트 및 컴포넌트
     private GameObject magicCircle;
     private Rigidbody2D monsterRig;
     private Animator animator;
-
+    private Renderer monsterRenderer;
+    
 
     // Start is called before the first frame update
     void Awake()
     {
+        monsterRenderer = GetComponent<Renderer>();
         monsterRig = GetComponent<Rigidbody2D>();
         magicCircle = GameObject.Find("magicCircle");
         animator = GetComponent<Animator>();
+        Prev_Speed = speed;
+        tmp_mass = this.gameObject.GetComponent<Rigidbody2D>().mass;
     }
 
     // Update is called once per frame
@@ -61,7 +68,10 @@ public class MonsterComponent : MonoBehaviour
         Hp = maxHp;
         isDead = false;
         isAttacked = false;
-        isFreeze = false;
+        isSlow = false;
+        this.speed = Prev_Speed;
+        FreezeEnd();
+
     }
 
     private void Move(float distance)
@@ -106,6 +116,24 @@ public class MonsterComponent : MonoBehaviour
         isAttacked = false;
 
     }
+
+    public void Freeze()
+    {
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        GetComponent<Rigidbody2D>().mass = 0;
+        monsterRenderer.material.color = Color.cyan;
+        isFreeze = true;
+
+    }
+
+    public void FreezeEnd()
+    {
+        GetComponent<Rigidbody2D>().isKinematic = false;
+        GetComponent<Rigidbody2D>().mass = tmp_mass;
+        monsterRenderer.material.color = Color.white;
+        isFreeze = false;
+    }
+
 
     public void OnCollisionStay2D(Collision2D collision)
     {
