@@ -6,49 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="09127728-c9ee-4fc4-a03f-104e2e69fd04" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Bucuradopan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bucuradopan/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Intro.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Maplestory Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Maplestory Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro/Intro.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro/Intro.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro/Intro.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Intro/Intro.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro/IntroSystem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Intro/IntroSystem.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tutorial.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/Tutorial.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/TutorialSet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/TutorialSet.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토1.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토10.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토11.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토12.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토13.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토14.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토15.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토2.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토3.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토4.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토5.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토6.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토7.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토8.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tutorial/튜토9.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +93,7 @@
       <workItem from="1706877240694" duration="19000" />
       <workItem from="1706928384773" duration="664000" />
       <workItem from="1706937506098" duration="940000" />
-      <workItem from="1706940151929" duration="1767000" />
+      <workItem from="1706940151929" duration="2359000" />
     </task>
     <servers />
   </component>

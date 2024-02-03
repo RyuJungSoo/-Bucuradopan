@@ -50,6 +50,10 @@ public class SlowSkillComponent : MonoBehaviour
                     {
                         monster.GetComponent<MonsterComponent>().isSlow = true;
                         monster.GetComponent<MonsterComponent>().speed -= (Debuff_speed + 0.2f*SkillLevel);
+
+                        if (monster.GetComponent<MonsterComponent>().speed <= 0)
+                            monster.GetComponent<MonsterComponent>().speed = 0.5f;
+
                     }
                 }
 
