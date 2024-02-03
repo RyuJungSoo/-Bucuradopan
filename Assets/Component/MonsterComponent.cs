@@ -123,8 +123,18 @@ public class MonsterComponent : MonoBehaviour
             if (isSingleton)
             {
                 UiManager.instance.BossHpBar_OFF();
+
                 GameManager.instance.SpawnLevelUp();
                 GameManager.instance.isBoss = false;
+
+                if (GameManager.instance.isAllCleared())
+                {
+                    GameManager.instance.ClearAllWave();
+                }
+                else
+                {
+                    GameManager.instance.ClearWave();
+                }
             }
 
             Invoke("Object_OFF", 0.3f);

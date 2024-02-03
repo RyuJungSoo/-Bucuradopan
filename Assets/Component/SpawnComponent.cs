@@ -8,7 +8,7 @@ public class SpawnComponent : MonoBehaviour
     // 변수
     private float curTime;
     public float SpawnCoolTime = 1f; // 스폰 쿨타임
-    private int SpawnLevel;
+    public int SpawnLevel;
 
     // 게암오브젝트 및 컴포넌트
     public Transform[] spawnPoint;
@@ -27,7 +27,7 @@ public class SpawnComponent : MonoBehaviour
     {
         if (curTime <= 0)
         {
-            Spawn(SpawnLevel);
+            Spawn(Random.Range(0,SpawnLevel +1));
             curTime = SpawnCoolTime;
         }
         else

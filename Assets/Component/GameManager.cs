@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     public bool isBoss = false;
 
 
+    //히든 변수
+    public float stella = 0f;
+
     // 스태미나 관련 변수들
     public float maxStamina = 30f;
     public float Stamina = 30f;
@@ -24,7 +27,7 @@ public class GameManager : MonoBehaviour
 
 
     // 마법진 관련 변수들
-    public float max_Progress = 50f;
+    public float max_Progress = 0f;
     public float Progress = 0f;
     public float Progress_speed = 1f;
 
@@ -47,6 +50,11 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private void Start()
+    {
+        NewStage();
+    }
+
     void Update()
     {
         if (!isGameOver)
@@ -55,7 +63,7 @@ public class GameManager : MonoBehaviour
                 return;
             else
             {
-                Progress += (Progress_speed * Time.unscaledDeltaTime);
+                Progress += (Progress_speed * Time.deltaTime);
                 UiManager.instance.ProgressBarUpdate();
 
                 if (Progress >= max_Progress)
@@ -67,8 +75,35 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool isAllCleared()
+    {
+        return Spawner.GetComponent<SpawnComponent>().SpawnLevel == 4;
+    }
+    public void NewStage()
+    {
+        Time.timeScale = 1f;
+        Stamina = maxStamina;
+        max_Progress += 50f;
 
-    
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        UiManager.instance.EnableGameOverPanel();
+    }
+
+    public void ClearWave()
+    {
+        UiManager.instance.EnableClearPanel();
+
+    }
+    public void ClearAllWave()
+    {
+        UiManager.instance.EnableAllClearPanel();
+
+    }
+
     public void ChangeAtk(int data)
     {
         atk += data;
@@ -108,7 +143,7 @@ public class GameManager : MonoBehaviour
     public void StaminaRecover()
     {
 
-        Stamina += (stamina_RecoverSpeed*Time.unscaledDeltaTime);
+        Stamina += (stamina_RecoverSpeed*Time.deltaTime);
         if (Stamina > maxStamina)
             Stamina = maxStamina;
     }

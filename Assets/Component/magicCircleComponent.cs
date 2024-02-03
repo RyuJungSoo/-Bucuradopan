@@ -32,6 +32,8 @@ public class magicCircleComponent : MonoBehaviour
         {
             Hp = 0;
             gameObject.SetActive(false);
+
+            GameManager.instance.GameOver();
         }
         isAttacked = false;
     }

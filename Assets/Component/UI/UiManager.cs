@@ -36,6 +36,41 @@ public class UiManager : MonoBehaviour
 
     }
 
+    public void EnableGameOverPanel()
+    {
+        deathPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void DisableGameOverPanel()
+    {
+        deathPanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void EnableAllClearPanel()
+    {
+        allClearPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void DisableAllClearPanel()
+    {
+        allClearPanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void EnableClearPanel()
+    {
+        waveClearPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public void DisableClearPanel()
+    {
+        waveClearPanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
     public void HpBarUpdate()
     {
         Hp_Bar.fillAmount = GameManager.instance.magicCircle.Hp / GameManager.instance.magicCircle.maxHp;
