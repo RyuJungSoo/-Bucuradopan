@@ -208,7 +208,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &10397244
 CircleCollider2D:
@@ -279,7 +279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &29187699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -975,7 +975,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &223140681
 MonoBehaviour:
@@ -1258,7 +1258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &292307974
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1873,7 +1873,7 @@ RectTransform:
   - {fileID: 29187699}
   - {fileID: 822397519}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2546,6 +2546,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692005951}
   m_CullTransparentMesh: 1
+--- !u!1001 &708548117
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 678270014828531851, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_Name
+      value: Spaghetti_Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531851, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 678270014828531958, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+--- !u!1 &708548118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 678270014828531851, guid: e8d0f56327eba0540923acef45ca3a08, type: 3}
+  m_PrefabInstance: {fileID: 708548117}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &733372473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2657,6 +2723,7 @@ MonoBehaviour:
   - {fileID: 853198435}
   - {fileID: 1107508725}
   - {fileID: 1236863482}
+  - {fileID: 708548118}
 --- !u!4 &760802597
 Transform:
   m_ObjectHideFlags: 0
@@ -2678,7 +2745,7 @@ Transform:
   - {fileID: 151813487}
   - {fileID: 381982053}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782182663
 GameObject:
@@ -2954,7 +3021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &822397519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3249,7 +3316,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1007598230
 MonoBehaviour:
@@ -3267,6 +3334,7 @@ MonoBehaviour:
   - {fileID: 678270014828531851, guid: 7bcae0157ae8ed842b634acc8ffa42c0, type: 3}
   - {fileID: 678270014828531851, guid: 6dd5746e7630b994a9d0321677203b6b, type: 3}
   - {fileID: 678270014828531851, guid: 319dcab0ee77ee34386f0c1a4fbe3cbb, type: 3}
+  - {fileID: 678270014828531851, guid: 1d42625c43b51eb41a010f0c8a66e99a, type: 3}
   canvas: {fileID: 474859833}
 --- !u!1001 &1107508724
 PrefabInstance:
@@ -4227,7 +4295,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1448409322
 GameObject:
@@ -4381,7 +4449,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1452664704
 MonoBehaviour:
@@ -6126,7 +6194,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2050147710
 MonoBehaviour:
@@ -6149,7 +6217,7 @@ MonoBehaviour:
   stamina_usage: 5
   stamina_RecoverSpeed: 3
   stamina_cool: 1
-  max_Progress: 1
+  max_Progress: 100
   Progress: 0
   Progress_speed: 1
   magicCircle: {fileID: 10397246}
