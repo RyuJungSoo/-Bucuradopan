@@ -3300,7 +3300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f5f7b45f1a6c345b252136cebacdc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  retryPanel: {fileID: 0}
+  retryPanel: {fileID: 1667721620}
 --- !u!1 &832165273
 GameObject:
   m_ObjectHideFlags: 0
