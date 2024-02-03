@@ -25,7 +25,13 @@ public class MonsterComponent : MonoBehaviour
     private Rigidbody2D monsterRig;
     private Animator animator;
     private Renderer monsterRenderer;
-    
+
+
+    private void OnEnable()
+    {
+        if (isSingleton)
+            UiManager.instance.BossHpBar_ON();
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -104,6 +110,10 @@ public class MonsterComponent : MonoBehaviour
     {
         isAttacked = true;
         Hp -= damage;
+
+        if (isSingleton)
+            UiManager.instance.BossHpBar_Update();
+
         if (Hp <= 0)
         {
             monsterRig.velocity = new Vector3(0, 0); // 관성 지우기
@@ -112,6 +122,7 @@ public class MonsterComponent : MonoBehaviour
 
             if (isSingleton)
             {
+                UiManager.instance.BossHpBar_OFF();
                 GameManager.instance.SpawnLevelUp();
                 GameManager.instance.isBoss = false;
             }

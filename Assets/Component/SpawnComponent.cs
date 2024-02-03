@@ -58,6 +58,18 @@ public class SpawnComponent : MonoBehaviour
 
     }
 
+    public float Cur_BossHp()
+    {
+        
+        return Boss[SpawnLevel].GetComponent<MonsterComponent>().Hp;
+    }
+
+    public float Cur_BossMaxHp()
+    {
+
+        return Boss[SpawnLevel].GetComponent<MonsterComponent>().maxHp;
+    }
+
     public void LevelUp()
     {
         SpawnLevel++;
