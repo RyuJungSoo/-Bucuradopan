@@ -5,7 +5,6 @@ public class MainMenuSystem : MonoBehaviour
 {
     public GameObject skipPanel;
     public GameObject optionPanel;
-   
 
     private void Awake()
     {

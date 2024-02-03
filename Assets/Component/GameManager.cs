@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
 
     public bool isAllCleared()
     {
+
         return Spawner.GetComponent<SpawnComponent>().SpawnLevel == 4;
     }
     public void NewStage()
