@@ -2856,6 +2856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnCoolTime: 3
+  SpawnLevel: 0
   spawnPoint: []
   Boss:
   - {fileID: 853198435}
@@ -7195,7 +7196,7 @@ MonoBehaviour:
   stamina_usage: 5
   stamina_RecoverSpeed: 10
   stamina_cool: 0.5
-  max_Progress: -49
+  max_Progress: 0
   Progress: 0
   Progress_speed: 1
   magicCircle: {fileID: 10397246}

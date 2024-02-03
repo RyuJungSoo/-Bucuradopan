@@ -5,11 +5,18 @@ public class MainMenuSystem : MonoBehaviour
 {
     public GameObject skipPanel;
     public GameObject optionPanel;
+    public GameObject tutorialPanel;
+
+    public GameObject soundManager;
 
     private void Awake()
     {
         skipPanel.SetActive(false);
         optionPanel.SetActive(false);
+        tutorialPanel.SetActive(false);
+
+        DontDestroyOnLoad(soundManager);
+
     }
 
     public void GameStart()
@@ -25,7 +32,7 @@ public class MainMenuSystem : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Tutorial");
+            SceneManager.LoadScene("Intro");
         }
     }
 

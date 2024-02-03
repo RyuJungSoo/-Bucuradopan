@@ -3,11 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialManager : MonoBehaviour
+public class TutorialPanel : MonoBehaviour
 {
     public Image[] tutorialPanel;
     private int currentPage = 0;
 
+    private void Awake()
+    {
+        foreach(Image i in tutorialPanel)
+        {
+            i.gameObject.SetActive(false);
+        }
+
+        tutorialPanel[0].gameObject.SetActive(true);
+    }
     public void PrevButton()
     {
         if (currentPage > 0)
