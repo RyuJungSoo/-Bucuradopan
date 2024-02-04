@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  Hp: 500
-  maxHp: 500
+  Hp: 300
+  maxHp: 300
   Damage: 50
   isDead: 0
   isFreeze: 0

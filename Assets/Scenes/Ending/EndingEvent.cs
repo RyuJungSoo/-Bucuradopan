@@ -14,11 +14,6 @@ public class EndingEvent : MonoBehaviour
     public float fadeDuration = 2.0f;
 
     public GameObject endingPanel;
-    private void Awake()
-    {        
-        lastImage.gameObject.SetActive(false);
-
-    }
 
     private void Start()
     {
@@ -86,6 +81,13 @@ public class EndingEvent : MonoBehaviour
 
     public void ChangeToMainMenuScene()
     {
+        GameObject gameObject = GameObject.Find("SoundManager");
+
+        if ( gameObject is not null)
+        {
+            Destroy(gameObject);
+        }
+
         SceneManager.LoadScene("MainMenu");
     }
 }
