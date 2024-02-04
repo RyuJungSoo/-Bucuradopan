@@ -86,6 +86,7 @@ public class SpawnComponent : MonoBehaviour
                 isFlag = true;
                 continue;
             }
+            Debug.Log(child.gameObject.name);
             child.TakeDamage(child.maxHp);
         
         }

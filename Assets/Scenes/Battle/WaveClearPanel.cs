@@ -10,6 +10,7 @@ public class WaveClearPanel : MonoBehaviour
     public TMP_Text thirdText;
 
     public MouseController mouse;
+    public SpawnComponent spawnComponent;
 
     private void Update()
     {
@@ -20,6 +21,7 @@ public class WaveClearPanel : MonoBehaviour
 
     private void OnEnable()
     {
+        spawnComponent.AllKill();
         Time.timeScale = 0f;
         mouse.GamePause = true;
     }
