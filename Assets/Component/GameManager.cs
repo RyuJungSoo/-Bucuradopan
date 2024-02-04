@@ -19,11 +19,11 @@ public class GameManager : MonoBehaviour
     public float stella = 0f;
 
     // 스태미나 관련 변수들
-    public float maxStamina = 30f;
-    public float Stamina = 30f;
-    public float stamina_usage = 5f;
-    public float stamina_RecoverSpeed = 3f;
-    public float stamina_cool = 1f;
+    public float maxStamina = 120f;
+    public float Stamina = 120f;
+    public float stamina_usage = 4f;
+    public float stamina_RecoverSpeed = 10f;
+    public float stamina_cool = 0.5f;
 
 
     // 마법진 관련 변수들
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
 
     public static GameManager instance = null;
+    
     public magicCircleComponent magicCircle;
     public GameObject Spawner;
     public AudioSource mouse_Audio;

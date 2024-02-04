@@ -63,7 +63,7 @@ public class MonsterComponent : MonoBehaviour
 
     private void Object_OFF()
     {
-        //Destroy(this.gameObject);
+        gameObject.transform.position += new Vector3(-500, 0, 0);
         gameObject.SetActive(false);
     }
 

@@ -48,8 +48,8 @@ public class WaveClearPanel : MonoBehaviour
 
     public void IncreaseHP()
     {
-        GameManager.instance.magicCircle.maxHp += 50f;
-        GameManager.instance.magicCircle.Hp += 50f;
+        GameManager.instance.magicCircle.maxHp *=2f;
+        GameManager.instance.magicCircle.Hp *=2f;
 
         UiManager.instance.HpBarUpdate();
 

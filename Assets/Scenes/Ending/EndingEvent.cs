@@ -17,6 +17,7 @@ public class EndingEvent : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1.0f;
         StartCoroutine(FadeIn());
     }
 
