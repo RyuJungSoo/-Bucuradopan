@@ -1142,7 +1142,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3833321704208447528, guid: 6e435689db0264e479ce29d21129a241, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3ee3472bb9f30bf45a34f68949d2842c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7bced2ddc3c412b44a37d7c92ca9fdcd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -9377,7 +9377,7 @@ MonoBehaviour:
   mouse_Audio: {fileID: 223140684}
   soundManager: {fileID: 0}
   _effectSounds:
-  - {fileID: 8300000, guid: 3ee3472bb9f30bf45a34f68949d2842c, type: 3}
+  - {fileID: 8300000, guid: 7bced2ddc3c412b44a37d7c92ca9fdcd, type: 3}
   - {fileID: 8300000, guid: c4fecf44f0b8e9049858944b5839d3c3, type: 3}
   - {fileID: 8300000, guid: f426b0752e1f23b4f8986e084439bbb9, type: 3}
   - {fileID: 8300000, guid: 9a392aa161cc7d846a9d65db7c1d8c7a, type: 3}
