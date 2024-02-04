@@ -74,4 +74,22 @@ public class SpawnComponent : MonoBehaviour
     {
         SpawnLevel++;
     }
+
+    public void AllKill()
+    {
+        MonsterComponent[] allChildren = pool.GetComponentsInChildren<MonsterComponent>();
+        bool isFlag = false; // 처음에 어미부터 확인하는거 체크용 flag
+        foreach (MonsterComponent child in allChildren)
+        {
+            if (isFlag == false)
+            {
+                isFlag = true;
+                continue;
+            }
+            child.TakeDamage(child.maxHp);
+        
+        }
+    
+    
+    }
 }
