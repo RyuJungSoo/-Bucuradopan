@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
 
 //Fade In -> ShowImage -> Fade Out -> ChangeScene
 //위 순서로 코루틴이 진행됨.
@@ -10,21 +11,15 @@ using System.Collections;
 public class IntroEvent : MonoBehaviour
 {
     public Image[] image;
+    public Image finalImage;
 
     public Image fadePanel;
     public float fadeDuration = 2.0f;
-    private void Awake()
-    {
-        foreach(Image i in image)
-        {
-            i.gameObject.SetActive(false);
-        }
 
-        image[0].gameObject.SetActive(true);
-    }
     void Start()
     {
         StartCoroutine(FadeIn());
+
     }
     private IEnumerator FadeIn()
     {
@@ -54,12 +49,12 @@ public class IntroEvent : MonoBehaviour
 
         foreach (Image i in image)
         {
-            i.gameObject.SetActive(true);
-
             yield return new WaitForSeconds(1.0f);
 
             i.gameObject.SetActive(false);
         }
+
+        finalImage.gameObject.SetActive(true);
 
         yield return FadeOut();
 

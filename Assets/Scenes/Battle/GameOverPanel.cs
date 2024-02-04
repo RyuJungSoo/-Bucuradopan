@@ -6,6 +6,8 @@ public class GameOverPanel : MonoBehaviour
 {
     public GameObject retryPanel;
 
+    public MouseController mouse;
+
     private void Awake()
     {
         //retryPanel.SetActive(false);
@@ -24,12 +26,16 @@ public class GameOverPanel : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(ShowRetryPanel());
+        mouse.GamePause = true;
+        
     }
 
     private void OnDisable()
     {
         StopAllCoroutines();
         retryPanel.SetActive(false);
+
+        mouse.GamePause = false;
     }
 
     public void Retry()
