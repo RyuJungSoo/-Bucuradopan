@@ -9848,6 +9848,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7725566158950883841, guid: 707c86c9121b9494f875baebc0139486, type: 3}
+      propertyPath: _musics.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725566158950883841, guid: 707c86c9121b9494f875baebc0139486, type: 3}
+      propertyPath: _musics.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 757cfd5801b5e50499aa35b8c69b9d1a, type: 3}
+    - target: {fileID: 7725566158950883841, guid: 707c86c9121b9494f875baebc0139486, type: 3}
+      propertyPath: _effectSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725566158950883841, guid: 707c86c9121b9494f875baebc0139486, type: 3}
+      propertyPath: _effectSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ee3472bb9f30bf45a34f68949d2842c, type: 3}
+    - target: {fileID: 7725566158950883841, guid: 707c86c9121b9494f875baebc0139486, type: 3}
+      propertyPath: _effectSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c4fecf44f0b8e9049858944b5839d3c3, type: 3}
+    - target: {fileID: 7725566158950883841, guid: 707c86c9121b9494f875baebc0139486, type: 3}
+      propertyPath: _effectSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f426b0752e1f23b4f8986e084439bbb9, type: 3}
+    - target: {fileID: 7725566158950883841, guid: 707c86c9121b9494f875baebc0139486, type: 3}
+      propertyPath: _effectSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a392aa161cc7d846a9d65db7c1d8c7a, type: 3}
     - target: {fileID: 7757229076292002459, guid: 707c86c9121b9494f875baebc0139486, type: 3}
       propertyPath: m_RootOrder
       value: 3

@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public magicCircleComponent magicCircle;
     public GameObject Spawner;
+    public AudioSource mouse_Audio;
+    public GameObject soundManager;
+    public AudioClip[] _effectSounds;
 
     private void Awake()
     {
@@ -42,17 +45,28 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            
+
         }
 
         else
+        {
+            
             Destroy(this.gameObject);
+        }
         
     }
 
     private void Start()
     {
         NewStage();
+        soundManager = GameObject.Find("SoundManager");
+        if (soundManager != null)
+        {
+            Debug.Log("사운드OK");
+            PlaySound(true, 1);
+        }
+        else
+            Debug.Log("사운드실패");
     }
 
     void Update()
@@ -75,8 +89,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PlaySound(bool isBGM, int index)
+    {
+        
+
+        if (isBGM)
+        {
+            if (soundManager == null)
+            {
+                return;
+            }
+            Debug.Log("OK");
+            soundManager.GetComponent<SoundManager>().ChangeMusic(index);
+        }
+        else
+        {
+            //Debug.Log(_effectSounds[index]);
+            mouse_Audio.PlayOneShot(_effectSounds[index]);
+        }
+    }
+
     public void Retry()
     {
+
         SceneManager.LoadScene("Battle");
     }
     public bool isAllCleared()

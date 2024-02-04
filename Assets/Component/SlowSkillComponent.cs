@@ -42,6 +42,7 @@ public class SlowSkillComponent : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Alpha1))
             {
+                GameManager.instance.PlaySound(false, 1);
                 Effect_UI.SetActive(true);
                 monsters = GameObject.FindGameObjectsWithTag("Monster");
                 foreach (GameObject monster in monsters)

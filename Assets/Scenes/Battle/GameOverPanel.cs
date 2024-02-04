@@ -8,7 +8,8 @@ public class GameOverPanel : MonoBehaviour
 
     private void Awake()
     {
-        retryPanel.SetActive(false);
+        //retryPanel.SetActive(false);
+        GameManager.instance.PlaySound(true, 2);
     }
 
     private IEnumerator ShowRetryPanel()
@@ -38,6 +39,7 @@ public class GameOverPanel : MonoBehaviour
 
     public void GiveUp()
     {
+        GameManager.instance.soundManager.GetComponent<SoundManager>().DestroySoundManager();
         SceneManager.LoadScene("MainMenu");
     }
 }
