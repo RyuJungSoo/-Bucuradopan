@@ -11,7 +11,7 @@ using System;
 public class IntroEvent : MonoBehaviour
 {
     public Image[] image;
-    public Image finalImage;
+    public Image lastImage;
 
     public Image fadePanel;
     public float fadeDuration = 2.0f;
@@ -54,7 +54,7 @@ public class IntroEvent : MonoBehaviour
             i.gameObject.SetActive(false);
         }
 
-        finalImage.gameObject.SetActive(true);
+        lastImage.gameObject.SetActive(true);
 
         yield return FadeOut();
 

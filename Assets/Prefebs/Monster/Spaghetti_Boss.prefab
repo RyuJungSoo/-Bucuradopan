@@ -145,7 +145,7 @@ MonoBehaviour:
   isFreeze: 0
   isAttack: 0
   isAttacked: 0
-  isSingleton: 0
+  isSingleton: 1
   isSlow: 0
 --- !u!95 &5292450897491268269
 Animator:
