@@ -68,7 +68,7 @@ public class HpBarScript : MonoBehaviour
             {
                 if (!m_objectList[i][j].gameObject.activeSelf)
                 {
-
+                    m_hpBarList[i][j].transform.position = m_cam.WorldToScreenPoint(m_objectList[i][j].position + new Vector3(-400f, -400f, 0));
                     m_hpBarList[i][j].SetActive(false);
                 }
                 else
