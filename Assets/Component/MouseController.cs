@@ -27,7 +27,6 @@ public class MouseController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                GameManager.instance.PlaySound(false,0);
                 if (GameManager.instance.StaminaUse())
                 {
                     isAttack = true;
@@ -38,6 +37,7 @@ public class MouseController : MonoBehaviour
                         if (collider.tag == "Monster")
                         {
 
+                            GameManager.instance.PlaySound(false, 0);
                             collider.gameObject.GetComponent<MonsterComponent>().TakeDamage(GameManager.instance.atk);
                         }
                     }

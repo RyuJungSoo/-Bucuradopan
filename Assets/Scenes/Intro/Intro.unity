@@ -1216,7 +1216,7 @@ MonoBehaviour:
   - {fileID: 894465770}
   - {fileID: 713101365}
   - {fileID: 1965979255}
-  finalImage: {fileID: 1965979255}
+  lastImage: {fileID: 1965979255}
   fadePanel: {fileID: 1277338073}
   fadeDuration: 2
 --- !u!1 &1614066416
