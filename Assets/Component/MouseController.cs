@@ -10,6 +10,8 @@ public class MouseController : MonoBehaviour
 
     private Collider2D[] collider2Ds; // 몬스터 관리용 배열
 
+    public GameObject StaminaUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +26,15 @@ public class MouseController : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = -1;
             transform.position = Vector3.Lerp(transform.position, mousePos, 0.3f);
+            StaminaUI.transform.position = Vector3.Lerp(StaminaUI.transform.position, mousePos + new Vector3(0,-0.6f,0), 0.3f);
 
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0) && GameManager.instance.isPaused is false)
             {
                 if (GameManager.instance.StaminaUse())
                 {
+
+                    GameManager.instance.PlaySound(false, 0);
+
                     isAttack = true;
                     UiManager.instance.StaminaBarUpdate();
                     collider2Ds = Physics2D.OverlapCircleAll(transform.position, attackRange);
@@ -37,7 +43,6 @@ public class MouseController : MonoBehaviour
                         if (collider.tag == "Monster")
                         {
 
-                            GameManager.instance.PlaySound(false, 0);
                             collider.gameObject.GetComponent<MonsterComponent>().TakeDamage(GameManager.instance.atk);
                         }
                     }

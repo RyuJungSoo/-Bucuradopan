@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public float atk = 1f;
     public bool isGameOver = false;
     public bool isBoss = false;
+    public bool isPaused = false;
 
     //히든 변수
     public float stella = 0f;
@@ -167,7 +168,6 @@ public class GameManager : MonoBehaviour
 
     public bool StaminaUse()
     {
-
 
         if (Stamina - stamina_usage >= 0)
         {

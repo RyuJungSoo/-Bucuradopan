@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UiManager : MonoBehaviour
 {
@@ -10,12 +11,17 @@ public class UiManager : MonoBehaviour
     public GameObject deathPanel;
     public GameObject allClearPanel;
     public GameObject waveClearPanel;
+
     public Image Hp_Bar;
+    public TMP_Text Hp_Data;
     public Image Stamina_Bar;
+    public TMP_Text Stamina_Data;
     public Image Progress_Bar;
+    public TMP_Text Progress_Data;
 
     public GameObject BossHpBar_Object;
     public Image BossHp_Bar;
+    public TMP_Text BossHp_Data;
 
     public static UiManager instance = null;
 
@@ -71,21 +77,10 @@ public class UiManager : MonoBehaviour
         waveClearPanel.SetActive(false);
         Time.timeScale = 1f;
     }
-    public void HpBarUpdate()
-    {
-        Hp_Bar.fillAmount = GameManager.instance.magicCircle.Hp / GameManager.instance.magicCircle.maxHp;
-
-    }
-
-    public void StaminaBarUpdate()
-    {
-        Stamina_Bar.fillAmount = GameManager.instance.Stamina / GameManager.instance.maxStamina;
-
-    }
-
     public void BossHpBar_ON()
     {
         BossHpBar_Object.SetActive(true);
+
         SpawnComponent spawnComponent = GameManager.instance.Spawner.GetComponent<SpawnComponent>();
         BossHp_Bar.fillAmount = 1;
     }
@@ -95,16 +90,44 @@ public class UiManager : MonoBehaviour
         BossHpBar_Object.SetActive(false);
     }
 
-    public void BossHpBar_Update()
-    {
 
-        SpawnComponent spawnComponent = GameManager.instance.Spawner.GetComponent<SpawnComponent>();
-        BossHp_Bar.fillAmount = spawnComponent.Cur_BossHp() / spawnComponent.Cur_BossMaxHp();
+    public void HpBarUpdate()
+    {
+        float Max_Hp = GameManager.instance.magicCircle.maxHp;
+        float Current_Hp = GameManager.instance.magicCircle.Hp;
+
+        Hp_Bar.fillAmount = Current_Hp / Max_Hp;
+        Hp_Data.text = Current_Hp.ToString("F0") + $" / {Max_Hp}";
+
     }
 
+    public void StaminaBarUpdate()
+    {
+        float Max_Stamina = GameManager.instance.maxStamina;
+        float Current_Stamina = GameManager.instance.Stamina; 
+
+        Stamina_Bar.fillAmount = Current_Stamina / Max_Stamina;
+        Stamina_Data.text = Current_Stamina.ToString("F0") + $" / {Max_Stamina}";
+    }
     public void ProgressBarUpdate()
     {
-        Progress_Bar.fillAmount = GameManager.instance.Progress / GameManager.instance.max_Progress;
+        float Max_progress = GameManager.instance.max_Progress;
+        float Current_Progress = GameManager.instance.Progress;
+
+        Progress_Bar.fillAmount = Current_Progress / Max_progress;
+        Progress_Data.text = (Current_Progress / Max_progress * 100f).ToString("F1") + "%";
 
     }
+    public void BossHpBar_Update()
+    {
+        SpawnComponent spawnComponent = GameManager.instance.Spawner.GetComponent<SpawnComponent>();
+
+        float Boss_MaxHp = spawnComponent.Cur_BossMaxHp();
+        float Boss_CurrentHp = spawnComponent.Cur_BossHp();
+
+        BossHp_Bar.fillAmount = Boss_CurrentHp / Boss_MaxHp;
+        BossHp_Data.text = $"{Boss_CurrentHp} / {Boss_MaxHp}";
+
+    }
+
 }
