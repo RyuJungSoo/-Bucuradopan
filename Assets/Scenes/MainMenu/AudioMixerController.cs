@@ -14,6 +14,30 @@ public class AudioMixerController : MonoBehaviour
     public Slider bgmVolumeSlider;
     public Slider sfxVolumeSlider;
 
+    private void OnEnable()
+    {
+        float masterVolume, bgmVolume, sfxVolume;
+
+        // Master Volume
+        if (audioMixer.GetFloat("MasterVolume", out masterVolume))
+        {
+            masterVolumeSlider.value = Mathf.Pow(10, masterVolume / 20);
+        }
+
+        // BGM Volume
+        if (audioMixer.GetFloat("BGMVolume", out bgmVolume))
+        {
+            bgmVolumeSlider.value = Mathf.Pow(10, bgmVolume / 20);
+        }
+
+        // SFX Volume
+        if (audioMixer.GetFloat("SFXVolume", out sfxVolume))
+        {
+            sfxVolumeSlider.value = Mathf.Pow(10, sfxVolume / 20);
+        }
+    }
+
+
     public void PlaySFXSound()
     {
         sfxTest.Play();

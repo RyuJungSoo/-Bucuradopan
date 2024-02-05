@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public float atk = 1f;
     public bool isGameOver = false;
     public bool isBoss = false;
-    public bool isPaused = false;
+    public bool isPaused = true;
 
     //히든 변수
     public float stella = 0f;
@@ -69,6 +69,9 @@ public class GameManager : MonoBehaviour
         }
         else
             Debug.Log("사운드실패");
+
+        CheckPause();
+
     }
 
     void Update()
@@ -91,6 +94,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ChangePause()
+    {
+        isPaused = !isPaused;
+
+        CheckPause();
+
+    }
+    public void CheckPause()
+    {
+        Time.timeScale = isPaused ? 0f : 1f;
+    }
+
     public void PlaySound(bool isBGM, int index)
     {
         
@@ -109,6 +124,20 @@ public class GameManager : MonoBehaviour
             //Debug.Log(_effectSounds[index]);
             mouse_Audio.PlayOneShot(_effectSounds[index]);
         }
+    }
+
+    public void GoToTitle()
+    {
+        ChangePause();
+                
+        SceneManager.LoadScene("MainMenu");
+
+        //soundManager.GetComponent<SoundManager>().DestroySoundManager();
+
+        GameObject _soundManager = GameObject.Find("SoundManager");
+        if (_soundManager is not null) Destroy(soundManager);
+
+        Destroy(gameObject);
     }
 
     public void Retry()

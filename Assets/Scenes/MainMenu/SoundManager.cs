@@ -27,6 +27,11 @@ public class SoundManager : Singleton<SoundManager>
         _audioSource.Stop();
     }
 
+    public void PauseMusic()
+    {
+        _audioSource.Pause();
+    }
+
     public void ChangeMusic(int index)
     {
         _audioSource.clip = _musics[index];

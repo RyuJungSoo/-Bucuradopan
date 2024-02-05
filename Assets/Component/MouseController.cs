@@ -25,8 +25,12 @@ public class MouseController : MonoBehaviour
         {
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = -1;
-            transform.position = Vector3.Lerp(transform.position, mousePos, 0.3f);
-            StaminaUI.transform.position = Vector3.Lerp(StaminaUI.transform.position, mousePos + new Vector3(0,-0.6f,0), 0.3f);
+
+            transform.position = mousePos;
+            StaminaUI.transform.position = mousePos + new Vector3(0,-0.7f,0);
+
+            //transform.position = Vector3.Lerp(transform.position, mousePos, 0.3f);
+            //StaminaUI.transform.position = Vector3.Lerp(StaminaUI.transform.position, mousePos + new Vector3(0.3f,-0.7f,0), 0.3f);
 
             if (Input.GetKeyDown(KeyCode.Mouse0) && GameManager.instance.isPaused is false)
             {

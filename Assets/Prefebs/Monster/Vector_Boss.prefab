@@ -147,6 +147,7 @@ MonoBehaviour:
   isAttacked: 0
   isSingleton: 1
   isSlow: 0
+  isVector: 1
 --- !u!95 &5292450897491268269
 Animator:
   serializedVersion: 5

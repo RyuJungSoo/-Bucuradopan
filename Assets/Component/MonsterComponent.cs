@@ -20,6 +20,10 @@ public class MonsterComponent : MonoBehaviour
     public bool isSlow = false; // Slow 디버프 유무
     private float tmp_mass;
 
+    //벡터 로직용 변수
+    public bool isVector = false;
+    private float distance;
+
     // 게암오브젝트 및 컴포넌트
     private GameObject magicCircle;
     private Rigidbody2D monsterRig;
@@ -51,7 +55,8 @@ public class MonsterComponent : MonoBehaviour
         if (magicCircle == null || magicCircle.active == false)
             return;
 
-        float distance = Vector2.Distance(transform.position, magicCircle.transform.position);
+        distance = Vector2.Distance(transform.position, magicCircle.transform.position);
+        
         if (isDead == false && isFreeze == false)
         {
             Move(distance);
@@ -111,8 +116,15 @@ public class MonsterComponent : MonoBehaviour
         isAttacked = true;
         Hp -= damage;
 
-        if (isSingleton)
+        if (isSingleton) {
+            
+            //HpBar 갱신
             UiManager.instance.BossHpBar_Update();
+
+            //Vector 싱글톤일 경우
+            if (isVector is true) Vector_Teleport();
+
+        }
 
         if (Hp <= 0)
         {
@@ -144,7 +156,25 @@ public class MonsterComponent : MonoBehaviour
         isAttacked = false;
 
     }
+    public void Vector_Teleport()
+    {
+        float angle = Random.Range(0, 360) * Mathf.Deg2Rad;
 
+        float CosAngle = Mathf.Cos(angle);
+        float SinAngle = Mathf.Sin(angle);
+                
+        Debug.Log(distance);
+
+        Vector2 newPosition =
+                new Vector2(CosAngle, SinAngle);
+
+        if (Mathf.Abs(distance) <= 8f) distance = 8f;
+        
+        newPosition *= distance;
+            
+        transform.position = newPosition;
+
+    }
     public void Freeze()
     {
         GetComponent<Rigidbody2D>().isKinematic = true;
