@@ -42,7 +42,7 @@ public class KingSkillComponent : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Alpha2))
             {
-                GameManager.instance.PlaySound(false, 2);
+                GameManager.instance.PlaySound(false, 3);
                 Effect_UI.SetActive(true);
                 monsters = GameObject.FindGameObjectsWithTag("Monster");
                 foreach (GameObject monster in monsters)
