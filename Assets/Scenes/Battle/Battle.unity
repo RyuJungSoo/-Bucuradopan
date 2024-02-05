@@ -16805,7 +16805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPanel: {fileID: 822397518}
   allClearPanel: {fileID: 29187698}
-  waveClearPanel: {fileID: 292307973}
+  waveClearPanel: {fileID: 1590288793}
   Hp_Bar: {fileID: 1240857215}
   Hp_Data: {fileID: 1045777991}
   Stamina_Bar: {fileID: 514510779}
