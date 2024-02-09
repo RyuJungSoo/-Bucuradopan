@@ -122,7 +122,7 @@ public class MonsterComponent : MonoBehaviour
             UiManager.instance.BossHpBar_Update();
 
             //Vector ΩÃ±€≈Ê¿œ ∞ÊøÏ
-            if (isVector is true) Vector_Teleport();
+            if (isVector is true && isFreeze is false) Vector_Teleport();
 
         }
 

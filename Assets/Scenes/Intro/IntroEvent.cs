@@ -14,13 +14,48 @@ public class IntroEvent : MonoBehaviour
     public Image lastImage;
 
     public Image fadePanel;
+    public Image skipPanel;
+
     public float fadeDuration = 2.0f;
+
+    private bool isSkip = false;
+
+    private void Awake()
+    {
+        skipPanel.gameObject.SetActive(false);
+    }
 
     void Start()
     {
-        StartCoroutine(FadeIn());
+        FadeScene();
+    }
+    public void FadeScene()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Fade());
 
     }
+
+    public void IsSkip()
+    {
+        isSkip = true;
+    }
+    private IEnumerator Fade()
+    {
+        if (isSkip is false) {
+
+            yield return FadeIn();
+
+            yield return ShowImage();
+
+        }
+
+        yield return FadeOut();
+
+        yield return ChangeScene();
+
+    }
+
     private IEnumerator FadeIn()
     {
         float startTime = 0f;
@@ -39,7 +74,7 @@ public class IntroEvent : MonoBehaviour
 
         fadePanel.color = targetColor;
 
-        yield return ShowImage();
+        fadePanel.gameObject.SetActive(false);
 
     }
     private IEnumerator ShowImage()
@@ -56,11 +91,13 @@ public class IntroEvent : MonoBehaviour
 
         lastImage.gameObject.SetActive(true);
 
-        yield return FadeOut();
-
     }
     private IEnumerator FadeOut()
     {
+        fadePanel.gameObject.SetActive(true);
+
+        Time.timeScale = 1f;
+
         float startTime = 0f;
         
         Color startColor = fadePanel.color;
@@ -75,15 +112,16 @@ public class IntroEvent : MonoBehaviour
             yield return null;
         }
 
-        fadePanel.color = targetColor;
-        
-        yield return ChangeScene();
+        fadePanel.color = targetColor;        
+
     }
+
     private IEnumerator ChangeScene()
     {
+        yield return null;
+
         SceneManager.LoadScene("Battle");
 
-        yield return null;
     }
 
 }
