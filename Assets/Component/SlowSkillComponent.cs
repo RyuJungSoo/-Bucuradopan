@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SlowSkillComponent : MonoBehaviour
 {
     private float curTime;
+    public float originCoolTime = 10f;
     public float coolTime = 10f; // Slow 스킬 쿨타임
     public int SkillLevel = 0; // 스킬 레벨
     public float Debuff_speed = 1f; // 깎을 속도값
@@ -17,6 +18,7 @@ public class SlowSkillComponent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        coolTime = originCoolTime;
         this.SkillLevel = SkillLevel;
     }
 
@@ -47,13 +49,15 @@ public class SlowSkillComponent : MonoBehaviour
                 monsters = GameObject.FindGameObjectsWithTag("Monster");
                 foreach (GameObject monster in monsters)
                 {
-                    if (monster.GetComponent<MonsterComponent>().isSlow == false)
-                    {
-                        monster.GetComponent<MonsterComponent>().isSlow = true;
-                        monster.GetComponent<MonsterComponent>().speed -= (Debuff_speed + 0.2f*SkillLevel);
+                    MonsterComponent monsterData = monster.GetComponent<MonsterComponent>();
 
-                        if (monster.GetComponent<MonsterComponent>().speed <= 0)
-                            monster.GetComponent<MonsterComponent>().speed = 0.5f;
+                    if (monsterData.isSlow == false)
+                    {
+                        monsterData.isSlow = true;
+                        monsterData.speed -= (Debuff_speed + 0.2f*SkillLevel);
+
+                        if (monsterData.speed <= 0)
+                            monsterData.speed = 0.5f;
 
                     }
                 }

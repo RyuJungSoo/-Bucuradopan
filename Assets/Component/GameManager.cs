@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     public GameObject soundManager;
     public AudioClip[] _effectSounds;
 
+    public SlowSkillComponent slowSkillComponent;
+    public ThunderSkillComponent thunderSkillComponent;
+    public FreezeSkillComponent freezeSkillComponent;
     private void Awake()
     {
 
@@ -92,6 +95,14 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void StellaBonus()
+    {
+        slowSkillComponent.coolTime -= (slowSkillComponent.originCoolTime* 0.25f);
+        thunderSkillComponent.coolTime -= (thunderSkillComponent.originCoolTime * 0.25f);
+        freezeSkillComponent.coolTime -= (freezeSkillComponent.originCoolTime * 0.25f);
+
     }
 
     public void ChangePause()

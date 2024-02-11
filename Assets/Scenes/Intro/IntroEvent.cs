@@ -40,6 +40,7 @@ public class IntroEvent : MonoBehaviour
     {
         isSkip = true;
     }
+
     private IEnumerator Fade()
     {
         if (isSkip is false) {
